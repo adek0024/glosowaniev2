@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Admina – Logowanie</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAtklEQVR42u2XMQ6AIAxF2bynFzJx8hoewRs5uGPcCPlA+xtBIiQd63sR+A3OjWVc17L7ZuC4/iOA4FUlhsDrAue8elQI7jcHJXLfoOBhPdBUSfpNAjm4VIIWgMBjUktQ2wDBcQkk6INYhAMJGv4JgVBEDAcSdDag+679A6aQaiqAIpa5BVRU53JekwP0vMg1JiUUcLNASULST29DKh8kU7PKuKbDZgh0J5CSqPowaS4QinT9uL0BBRi6P9OygHcAAAAASUVORK5CYII=">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fce4ec 0%, #fff9c4 50%, #e8f5e9 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: white;
+            border-radius: 28px;
+            padding: 48px 40px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 20px 60px rgba(233, 30, 140, 0.15);
+            border-top: 5px solid #e91e8c;
+            text-align: center;
+        }
+
+        .lock-icon { font-size: 48px; margin-bottom: 16px; display: block; }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 26px;
+            color: #4a3f5c;
+            margin-bottom: 6px;
+        }
+
+        .subtitle {
+            font-size: 13px;
+            color: #a07ab0;
+            margin-bottom: 32px;
+            letter-spacing: 0.5px;
+        }
+
+        .form-group { margin-bottom: 20px; text-align: left; }
+
+        label {
+            display: block;
+            font-size: 12px;
+            font-weight: 600;
+            color: #7a6a8a;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        input[type="password"] {
+            width: 100%;
+            padding: 14px 18px;
+            border: 2px solid #f0e6ff;
+            border-radius: 14px;
+            font-size: 15px;
+            font-family: 'Poppins', sans-serif;
+            color: #4a3f5c;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        input[type="password"]:focus { border-color: #e91e8c; }
+
+        .btn-login {
+            width: 100%;
+            padding: 14px;
+            background: linear-gradient(90deg, #e91e8c, #ff9800);
+            color: white;
+            border: none;
+            border-radius: 14px;
+            font-size: 14px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: opacity 0.2s;
+            touch-action: manipulation;
+        }
+
+        .btn-login:hover { opacity: 0.88; }
+        .btn-login:active { opacity: 0.75; }
+
+        .error-msg {
+            background: #fff0f5;
+            border: 1.5px solid #f8a5c2;
+            color: #c2185b;
+            padding: 12px 16px;
+            border-radius: 10px;
+            font-size: 13px;
+            margin-bottom: 20px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 24px;
+            color: #c9a0dc;
+            font-size: 13px;
+            text-decoration: none;
+        }
+
+        .back-link:hover { color: #e91e8c; }
+    </style>
+</head>
+<body>
+    <div class="login-card">
+        <span class="lock-icon">🔐</span>
+        <h1>Panel Admina</h1>
+        <p class="subtitle">Wiosna w Obiektywie &nbsp;·&nbsp; Konkurs 2026</p>
+
+        {% if error %}
+        <div class="error-msg">⚠️ {{ error }}</div>
+        {% endif %}
+
+        <form method="POST" action="/admin/login">
+            <div class="form-group">
+                <label for="password">Hasło</label>
+                <input type="password" id="password" name="password"
+                       placeholder="Wpisz hasło admina" autofocus autocomplete="current-password">
+            </div>
+            <button type="submit" class="btn-login">ZALOGUJ SIĘ</button>
+        </form>
+
+        <a class="back-link" href="/">← Wróć do strony głosowania</a>
+    </div>
+</body>
+</html>

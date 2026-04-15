@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiosna w Obiektywie - Konkurs</title>
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAtklEQVR42u2XMQ6AIAxF2bynFzJx8hoewRs5uGPcCPlA+xtBIiQd63sR+A3OjWVc17L7ZuC4/iOA4FUlhsDrAue8elQI7jcHJXLfoOBhPdBUSfpNAjm4VIIWgMBjUktQ2wDBcQkk6INYhAMJGv4JgVBEDAcSdDag+679A6aQaiqAIpa5BVRU53JekwP0vMg1JiUUcLNASULST29DKh8kU7PKuKbDZgh0J5CSqPowaS4QinT9uL0BBRi6P9OygHcAAAAASUVORK5CYII=">
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+
+    <div class="header-section">
+        <p class="subtitle">Konkurs fotograficzny</p>
+        <h1 class="title-main">WIOSNA W OBIEKTYWIE</h1>
+        <p class="title-deco">Zagłosuj na swoje ulubione zdjęcie</p>
+        <span class="flower-divider">🌸 🌼 🌷 🌿 🌺</span>
+        <div id="countdown">Ładowanie licznika...</div>
+    </div>
+
+    <div class="grid-container" id="gallery"></div>
+
+    <!-- Modal: podgląd zdjęcia -->
+    <div id="imgModal" class="modal">
+        <button class="modal-close" id="imgModalClose">✕</button>
+        <img id="fullImg" class="modal-content" alt="Podgląd zdjęcia">
+        <span class="modal-hint">Przesuń palcem lub kliknij ✕ aby zamknąć</span>
+    </div>
+
+    <!-- Modal: potwierdzenie głosu -->
+    <div id="confirmModal" class="modal">
+        <div class="confirm-box">
+            <span class="deco">🌸</span>
+            <h3>Potwierdź swój głos</h3>
+            <p id="confirmText"></p>
+            <div class="confirm-btns">
+                <button class="btn-confirm" id="finalOk">TAK, GŁOSUJ</button>
+                <button class="btn-cancel" id="cancelBtn">ANULUJ</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>🌿 Wiosna w Obiektywie &copy; 2026 &nbsp;|&nbsp; Konkurs fotograficzny 🌿</footer>
+
+    <script src="skrypt.js"></script>
+</body>
+</html>

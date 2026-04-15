@@ -1,0 +1,4 @@
+glosowanie.db
+__pycache__/
+*.pyc
+*.pyo
