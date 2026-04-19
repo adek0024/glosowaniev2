@@ -1,5 +1,5 @@
 // --- KONFIGURACJA ---
-const PHOTO_COUNT = 19;
+const PHOTO_COUNT = 12;
 
 const myData = [];
 for (let i = 1; i <= PHOTO_COUNT; i++) {

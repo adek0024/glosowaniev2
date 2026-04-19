@@ -9,7 +9,7 @@ app.secret_key = 'wiosna-w-obiektywie-sekretny-klucz-2026'
 
 # ── KONFIGURACJA ─────────────────────────────────────────────
 ADMIN_PASSWORD = 'admin123'   # ← ZMIEŃ NA SWOJE HASŁO
-PHOTO_COUNT    = 19
+PHOTO_COUNT    = 12
 DB_PATH        = os.path.join(os.path.dirname(__file__), 'glosowanie.db')
 
 # ── BAZA DANYCH ──────────────────────────────────────────────
